@@ -1,9 +1,24 @@
 
 public class OOPSBannerApp {
 
-    // Method to generate O pattern
-    static String[] getO() {
-        return new String[]{
+    // Static inner class to store character and its pattern
+    static class CharacterPattern {
+        char character;
+        String[] pattern;
+
+        CharacterPattern(char character, String[] pattern) {
+            this.character = character;
+            this.pattern = pattern;
+        }
+
+        String[] getPattern() {
+            return pattern;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        CharacterPattern O = new CharacterPattern('O', new String[]{
                 " ***** ",
                 "*     *",
                 "*     *",
@@ -11,12 +26,9 @@ public class OOPSBannerApp {
                 "*     *",
                 "*     *",
                 " ***** "
-        };
-    }
+        });
 
-    // Method to generate P pattern
-    static String[] getP() {
-        return new String[]{
+        CharacterPattern P = new CharacterPattern('P', new String[]{
                 "***** ",
                 "*    *",
                 "*    *",
@@ -24,12 +36,9 @@ public class OOPSBannerApp {
                 "*     ",
                 "*     ",
                 "*     "
-        };
-    }
+        });
 
-    // Method to generate S pattern
-    static String[] getS() {
-        return new String[]{
+        CharacterPattern S = new CharacterPattern('S', new String[]{
                 " *****",
                 "*     ",
                 "*     ",
@@ -37,19 +46,15 @@ public class OOPSBannerApp {
                 "      *",
                 "      *",
                 " *****"
-        };
-    }
+        });
 
-    public static void main(String[] args) {
-
-        String[] O = getO();
-        String[] P = getP();
-        String[] S = getS();
+        String[] O1 = O.getPattern();
+        String[] O2 = O.getPattern();
+        String[] P1 = P.getPattern();
+        String[] S1 = S.getPattern();
 
         for (int i = 0; i < 7; i++) {
-            System.out.println(O[i] + " " + O[i] + " " + P[i] + " " + S[i]);
+            System.out.println(O1[i] + " " + O2[i] + " " + P1[i] + " " + S1[i]);
         }
-
     }
-
 }
